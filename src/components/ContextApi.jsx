@@ -9,7 +9,7 @@ const ContextApi = ({ children }) => {
 
     let getData = ()=> {
         axios.get("https://dummyjson.com/products?sortBy=title&order=asc").then((response)=> {
-            console.log(response.data.products);
+            setData(response.data.products);
         })
     }
 

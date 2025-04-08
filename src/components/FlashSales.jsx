@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Container from './Container'
 import Count from './Count'
 import axios from 'axios'
@@ -34,6 +34,7 @@ function SamplePrevArrow(props) {
 const FlashSales = () => {
 
   let [info, setInfo] = useState([])
+
   let getdata = () => {
     axios.get("https://dummyjson.com/products?sortBy=title&order=asc").then((response) => {
       setInfo(response.data.products);
@@ -57,10 +58,6 @@ const FlashSales = () => {
 
 
 
-  // let clientRating = Array.from({ length: 5 }, (_, index) => {
-  //   let number = index + 0.5
-  //   return info.rating > index + 1 ? <IoMdStar /> : info.rating > number ? <IoMdStarHalf /> : <IoMdStarOutline />
-  // })
 
   return (
     <section className='py-[140px]'>
@@ -85,7 +82,7 @@ const FlashSales = () => {
               <div className="w-[90%] group cursor-pointer pt-[40px] pb-[60px]">
                 <div className="relative">
                   <div className="flex justify-center">
-                    <Link to="/product">
+                    <Link to={`${item.id}`}>
                       <img src={item.thumbnail} alt="" />
                     </Link>
                   </div>
@@ -103,15 +100,14 @@ const FlashSales = () => {
                     <p className="font-poppins font-medium text-[16px] text-[#DB4444] py-[8px]">${item.price}</p>
                   </div>
                 </div>
-                {/* <div className="">
-                    {clientRating}
-                  </div> */}
               </div>
             ))}
           </Slider>
 
           <div className="text-center">
-            <h3 className="font-poppins font-medium text-[16px] py-[16px] px-[48px] bg-[#DB4444] inline-block text-[#FAFAFA] rounded-[4px]">View All Products</h3>
+            <Link to="/product">
+              <h3 className="font-poppins font-medium text-[16px] py-[16px] px-[48px] bg-[#DB4444] inline-block text-[#FAFAFA] rounded-[4px]">View All Products</h3>
+            </Link>
           </div>
         </div>
       </Container>

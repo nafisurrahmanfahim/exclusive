@@ -96,23 +96,26 @@ const Banner = () => {
                         </div>
                     </div>
 
-                    <div className="w-[85%]">
+                    <div className="w-[75%]">
                         <Slider {...settings}>
                             <div className="">
                                 <a href="#">
                                     <img className='w-full' src={banner} alt="" />
                                 </a>
                             </div>
+
                             <div className="">
                                 <a href="#">
                                     <img className='w-full' src={banner} alt="" />
                                 </a>
                             </div>
+
                             <div className="">
                                 <a href="#">
                                     <img className='w-full' src={banner} alt="" />
                                 </a>
                             </div>
+
                             <div className="">
                                 <a href="#">
                                     <img className='w-full' src={banner} alt="" />
