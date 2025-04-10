@@ -6,6 +6,7 @@ import Layouts from './components/Layouts'
 import ProductDetails from './pages/ProductDetails'
 import CartPage from './pages/CartPage'
 import CheckOut from './pages/CheckOut'
+import Contact from './pages/Contact'
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/product/:id' element={<ProductDetails/>}></Route>
         <Route path='/cart' element={<CartPage/>}></Route>
         <Route path='/check-out' element={<CheckOut/>}></Route>
+        <Route path='/contact' element={<Contact/>}></Route>
       </Route>
     )
   )
