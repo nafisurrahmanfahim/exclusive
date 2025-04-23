@@ -1,122 +1,92 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Container from '../components/Container'
 import { Link } from 'react-router-dom'
 import phone from '../assets/phone.png'
 import mail from '../assets/mail.png'
 
 const Contact = () => {
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault(); // prevent page refresh
-
-    // form submission logic (FormSubmit)
-    const form = e.target;
-    form.submit(); // submitting the form
-  };
-
   return (
-    <section className="pb-[140px]">
+    <section className="pb-[100px] pt-[40px]">
       <Container>
-        <div className="">
-          <nav class="flex py-[50px]" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-              <li class="inline-flex items-center">
-                <Link to="/">Home</Link>
+        <div className="mb-8">
+          <nav className="flex justify-center md:justify-start py-[30px]" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse text-sm text-gray-500">
+              <li className="inline-flex items-center">
+                <Link to="/" className="hover:underline">Home</Link>
               </li>
               <li>
-                <div class="flex items-center">
-                  <span className="">/</span>
-                </div>
+                <span>/</span>
               </li>
               <li>
-                <div class="flex items-center">
-                  <h3 className="">Cantact</h3>
-                </div>
+                <h3 className="font-medium text-gray-800">Contact</h3>
               </li>
             </ol>
           </nav>
         </div>
 
-        <div className="flex justify-between">
-          <div className="w-[30%]">
-            <div className="flex items-center gap-[16px]">
-              <img src={phone} alt="" />
-              <h3 className="font-poppins font-medium text-[16px] text-[#000000]">Call To Us</h3>
+        <div className="flex flex-col md:flex-row gap-[40px] items-start">
+          {/* Left - Contact Info */}
+          <div className="w-full md:w-[35%]">
+            <div className="flex items-center gap-4 mb-4">
+              <img src={phone} alt="Phone Icon" className="w-6 h-6" />
+              <h3 className="font-poppins font-medium text-[18px] text-[#000000]">Call To Us</h3>
             </div>
-            <h3 className="font-poppins font-normal text-[14px] text-[#000000] pt-[24px]">We are available 24/7, 7 days a week.</h3>
-            <h3 className="font-poppins font-normal text-[14px] text-[#000000] pt-[16px] pb-[32px]">Phone: +8801611112222</h3>
-            <div className="border-t-[1px] border-[#b4adad]">
-              <div className="pt-[32px] flex items-center gap-[16px]">
-                <img src={mail} alt="" />
-                <h3 className="font-poppins font-medium text-[16px] text-[#000000]">Write To US</h3>
+            <p className="text-[14px] text-gray-700 mb-2">We are available 24/7, 7 days a week.</p>
+            <p className="text-[14px] text-gray-700 mb-8">Phone: +8801611112222</p>
+
+            <div className="border-t border-gray-300 pt-8">
+              <div className="flex items-center gap-4 mb-4">
+                <img src={mail} alt="Mail Icon" className="w-6 h-6" />
+                <h3 className="font-poppins font-medium text-[18px] text-[#000000]">Write To Us</h3>
               </div>
-              <h3 className="font-poppins font-normal text-[14px] text-[#000000] pt-[24px] w-[250px]">Fill out our form and we will contact you within 24 hours.</h3>
-              <h3 className="font-poppins font-normal text-[14px] text-[#000000] pt-[16px]">Emails: customer@exclusive.com</h3>
-              <h3 className="font-poppins font-normal text-[14px] text-[#000000] pt-[16px]">Emails: support@exclusive.com</h3>
+              <p className="text-[14px] text-gray-700 mb-2">Fill out our form and we will contact you within 24 hours.</p>
+              <p className="text-[14px] text-gray-700">Email: customer@exclusive.com</p>
+              <p className="text-[14px] text-gray-700 mt-2">Email: support@exclusive.com</p>
             </div>
           </div>
 
-          <div className="w-[60%]">
-            {/* <div className="flex gap-[16px]">
-              <input type="text" className='w-[235px] h-[50px] border-[1px] border-[#999090] pl-[15px]' placeholder='Your Name *'/>
-              <input type="text" className='w-[235px] h-[50px] border-[1px] border-[#999090] pl-[15px]' placeholder='Your Email *'/>
-              <input type="text" className='w-[235px] h-[50px] border-[1px] border-[#999090] pl-[15px]' placeholder='Your Phone *'/>
-            </div> */}
-            <form
-              action="https://formsubmit.co/29a657c0ed92acc863c8076feb8ad84c"
-              method="POST"
-              onSubmit={handleSubmit}
-              className="space-y-4 w-full max-w-md bg-white p-6 rounded-lg shadow-lg"
-            >
-              <h2 className="text-2xl font-semibold text-gray-700">Contact Us</h2>
+          {/* Right - Form */}
+          <div className="w-full md:w-[60%]">
+            <form className="space-y-6 bg-white p-4 rounded shadow-md">
+              <div className="relative w-full group">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="block py-2.5 px-2 w-full text-sm text-gray-900 bg-white border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="email"
+                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-2 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2.5 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Email address
+                </label>
+              </div>
 
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Your Name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
-              />
+              <div className="relative w-full group">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  className="block py-2.5 px-2 w-full text-sm text-gray-900 bg-white border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="password"
+                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-2 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2.5 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Password
+                </label>
+              </div>
 
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="Your Email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
-              />
-
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                placeholder="Your Message"
-                rows="4"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
-              ></textarea>
-
-              {/* Hidden Fields for FormSubmit */}
-              <input type="hidden" name="_next" value="https://exclusive-rho-sable.vercel.app" />
-              <input type="hidden" name="_subject" value="New message from contact form" />
-
-              <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md">
-                Send Message
+              <button
+                type="submit"
+                className="w-full md:w-auto px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-medium rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+              >
+                Submit
               </button>
             </form>
           </div>

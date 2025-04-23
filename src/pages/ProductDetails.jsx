@@ -86,7 +86,7 @@ const ProductDetails = () => {
 
                 <div className="flex justify-between py-[120px]">
                     <div className="w-[50%] pl-[100px] pt-[60px]">
-                        <img className='' src={singleProduct.thumbnail} alt="" />
+                        <img className='' src={singleProduct.thumbnail} alt="singleProduct.thumbnail" />
                     </div>
 
                     <div className="w-[50%]">
