@@ -1,4 +1,3 @@
-import React, { useContext, useEffect, useState } from 'react'
 import Container from '../components/Container'
 import { Link } from 'react-router-dom'
 import { ApiData } from '../components/ContextApi'
@@ -6,6 +5,7 @@ import Post from '../components/pagination/Post'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import Paginate from '../components/pagination/Paginate'
+import { useContext, useEffect, useState } from 'react';
 
 
 const ProductPage = () => {

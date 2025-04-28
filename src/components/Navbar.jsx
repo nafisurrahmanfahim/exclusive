@@ -39,21 +39,21 @@ const Navbar = () => {
           </div>
 
           {/* Navigation Links */}
-          <ul className={`md:flex gap-8 font-poppins font-normal text-[16px] text-[#000000] absolute md:static top-[60px] left-0 w-full md:w-auto bg-white md:bg-transparent px-6 md:px-0 py-4 md:py-0 z-40 transition-all duration-300 ease-in-out ${menuOpen ? "block" : "hidden"} md:block`}>
+          <ul className={`md:flex gap-8 font-poppins font-normal 2xl:text-[16px] lg:text-[16px] md:text-[14px] text-[#000000] absolute md:static top-[60px] left-0 w-full md:w-auto bg-white md:bg-transparent px-6 md:px-0 py-4 md:py-0 z-40 transition-all duration-300 ease-in-out ${menuOpen ? "block" : "hidden"} md:block`}>
             <li>
-              <NavLink to="/" className={({ isActive }) => isActive ? "bg-red-500 text-white px-3 py-1 rounded" : ""}>Home</NavLink>
+              <NavLink to="/" className={({ isActive }) => isActive ? "2xl:bg-red-500 lg:bg-red-500 md:text-red-500 2xl:text-[#fff] lg:text-[#fff] text-white 2xl:px-3 lg:px-3 md:px-0 py-1 rounded" : ""}>Home</NavLink>
             </li>
             <li>
-              <NavLink to="/product" className={({ isActive }) => isActive ? "bg-red-500 text-white px-3 py-1 rounded" : ""}>Shop</NavLink>
+              <NavLink to="/product" className={({ isActive }) => isActive ? "2xl:bg-red-500 lg:bg-red-500 md:text-red-500 2xl:text-[#fff] lg:text-[#fff] text-white 2xl:px-3 lg:px-3 md:px-0 py-1 rounded" : ""}>Shop</NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className={({ isActive }) => isActive ? "bg-red-500 text-white px-3 py-1 rounded" : ""}>Contact</NavLink>
+              <NavLink to="/contact" className={({ isActive }) => isActive ? "2xl:bg-red-500 lg:bg-red-500 md:text-red-500 2xl:text-[#fff] lg:text-[#fff] text-white 2xl:px-3 lg:px-3 md:px-0 py-1 rounded" : ""}>Contact</NavLink>
             </li>
             <li>
-              <NavLink to="/about" className={({ isActive }) => isActive ? "bg-red-500 text-white px-3 py-1 rounded" : ""}>About</NavLink>
+              <NavLink to="/about" className={({ isActive }) => isActive ? "2xl:bg-red-500 lg:bg-red-500 md:text-red-500 2xl:text-[#fff] lg:text-[#fff] text-white 2xl:px-3 lg:px-3 md:px-0py-1 rounded" : ""}>About</NavLink>
             </li>
             <li>
-              <NavLink to="/signup" className={({ isActive }) => isActive ? "bg-red-500 text-white px-3 py-1 rounded" : ""}>Sign Up</NavLink>
+              <NavLink to="/signup" className={({ isActive }) => isActive ? "2xl:bg-red-500 lg:bg-red-500 md:text-red-500 2xl:text-[#fff] lg:text-[#fff] text-white 2xl:px-3 lg:px-3 md:px-0 py-1 rounded" : ""}>Sign Up</NavLink>
             </li>
           </ul>
 
@@ -63,11 +63,11 @@ const Navbar = () => {
             <div className="relative">
               <input
                 type="search"
-                className="w-[200px] h-[36px] border pl-4 text-sm text-black rounded-md"
+                className="2xl:w-[200px] lg:w-[200px] md:w-[160px] h-[36px] border pl-2 text-sm text-black rounded-md"
                 placeholder="What are you looking for?"
                 aria-label="Search Products"
               />
-              <div className="absolute top-1/2 transform -translate-y-1/2 right-3 text-black text-lg">
+              <div className="absolute top-1/2 transform -translate-y-1/2 2xl:right-[7px] lg:right-[7px] md:right-[7px] text-black text-lg">
                 <CiSearch />
               </div>
             </div>
