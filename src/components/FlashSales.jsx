@@ -45,6 +45,7 @@ const FlashSales = () => {
     dots: false,
     infinite: true,
     speed: 500,
+    autoplay: true,
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
